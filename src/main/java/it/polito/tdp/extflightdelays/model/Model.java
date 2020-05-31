@@ -56,7 +56,6 @@ public class Model {
 					double pesoVecchio = this.grafo.getEdgeWeight(e);
 					double pesoNuovo = pesoVecchio + r.getPeso();
 					this.grafo.setEdgeWeight(e, pesoNuovo);
-					
 				}
 			}
 			

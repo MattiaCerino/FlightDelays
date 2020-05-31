@@ -96,9 +96,7 @@ public class ExtFlightDelaysDAO {
 	}
 
 	public int getAirlinesNumber(Airport a) {
-		String sql = "SELECT COUNT(DISTINCT(AIRLINE_ID)) AS tot " + 
-				"FROM flights " + 
-				"WHERE (ORIGIN_AIRPORT_ID = ?) || (DESTINATION_AIRPORT_ID = ?)";
+		String sql = "SELECT COUNT(DISTINCT(AIRLINE_ID)) AS tot FROM flights WHERE (ORIGIN_AIRPORT_ID = ?) || (DESTINATION_AIRPORT_ID = ?)";
 		int res = -1;
 		try {
 			Connection conn = ConnectDB.getConnection();
@@ -123,9 +121,7 @@ public class ExtFlightDelaysDAO {
 	}
 
 	public List<Rotta> getRotte(Map<Integer, Airport> idMap) {
-		String sql = "SELECT ORIGIN_AIRPORT_ID, DESTINATION_AIRPORT_ID, COUNT(*) as tot " +
-					"FROM flights " +
-					"GROUP BY ORIGIN_AIRPORT_ID, DESTINATION_AIRPORT_ID";
+		String sql = "SELECT ORIGIN_AIRPORT_ID, DESTINATION_AIRPORT_ID, COUNT(*) as tot FROM flights GROUP BY ORIGIN_AIRPORT_ID, DESTINATION_AIRPORT_ID";
 		List<Rotta> result = new ArrayList<Rotta>();
 		try {
 			Connection conn = ConnectDB.getConnection();

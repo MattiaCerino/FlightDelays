@@ -55,8 +55,7 @@ public class FXMLController {
     	
     	this.model.creaGrafo(x);
     	txtResult.appendText("Grafo creato!\n");
-    	txtResult.appendText("# VERTICI: " + this.model.vertexNumber());
-    	txtResult.appendText("# ARCHI: " + this.model.edgeNumber());
+    	txtResult.appendText("# VERTICI: " + this.model.vertexNumber() + " # ARCHI: " + this.model.edgeNumber());
     	
     	cmbBoxAeroportoPartenza.getItems().addAll(this.model.getAeroporti());
     	cmbBoxAeroportoDestinazione.getItems().addAll(this.model.getAeroporti());
